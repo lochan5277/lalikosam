@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Divine Within ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="title">The Divine Within ✨</h1>
+    <p class="subtitle">Embodying celestial, nurturing, and empowering feminine energy.</p>
+    <nav class="nav">
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="princess.html">Princess</a>
+      <a class="btn" href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+  <main class="container goddess-main">
+    <section class="quotes">
+      <blockquote>“She remembered who she was, and the game changed.” – Lalah Delia</blockquote>
+      <blockquote>“A woman is the full circle. Within her is the power to create, nurture, and transform.” – Diane Mariechild</blockquote>
+      <blockquote>“You are the universe expressing itself as a woman.”</blockquote>
+    </section>
+    <section class="goddess-gallery">
+      <img src="../Photos/ANIL8592.JPG" alt="aura" />
+    </section>
+    <!-- carousel for goddess page -->
+    <section class="carousel" id="goddess-carousel" aria-label="Goddess photos carousel"></section>
+  </main>
+  <footer class="site-footer">Made with love for my dearest Lali Pili 💕</footer>
+  <script>
+    // simple carousel for goddess page (match princess behavior)
+    const goddessPics = [
+      '../Photos/ANIL8575.JPG',
+      '../Photos/ANIL8581.JPG',
+      '../Photos/ANIL8578.JPG',
+      '../Photos/ANIL8583.JPG',
+      '../Photos/ANIL8580.JPG',
+      '../Photos/ANIL8585.JPG',
+      '../Photos/ANIL8586.JPG',
+      '../Photos/ANIL8589.JPG',
+      '../Photos/ANIL8587.JPG',
+      '../Photos/ANIL8590.JPG'
+    ];
+    let gci = 0;
+    function initGoddess(){
+      const el = document.getElementById('goddess-carousel');
+      if(!el) return;
+      goddessPics.forEach(p=>{
+        const img = document.createElement('img');
+        img.src = p; img.className = 'carousel-img'; img.style.opacity = 0; el.appendChild(img);
+      });
+      const imgs = ()=> el.querySelectorAll('.carousel-img');
+      setInterval(()=>{
+        const list = imgs();
+        if(!list.length) return;
+        list.forEach((im,i)=> im.style.opacity = i === gci ? 1 : 0);
+        gci = (gci + 1) % list.length;
+      }, 2000);
+    }
+    document.addEventListener('DOMContentLoaded', initGoddess);
+  </script>
+</body>
+</html>

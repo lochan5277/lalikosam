@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Beloved Princess 👑</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="title">Our Beloved Princess 👑</h1>
+    <p class="subtitle">Born with grace, she rules hearts with kindness. Our Princess, Lali Pili.</p>
+    <nav class="nav">
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="goddess.html">Goddess</a>
+      <a class="btn" href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="princess-hero">
+      <div class="princess-center">
+        <div class="frame">
+          <img src="../Photos/ANIL7164.JPG" alt="Lali" />
+        </div>
+        <div class="princess-text">
+          <h2>Born with grace</h2>
+          <p>She rules hearts with kindness. My Princess, Lali Pili ❤️.</p>
+        </div>
+        <div class="carousel" id="princess-carousel" aria-label="Princess photos carousel"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">Made with love for my dearest Lali Pili 💕</footer>
+  <script>
+    // simple carousel for princess page (CSS-driven sizing)
+    const carouselPics = [
+      '../Photos/ANIL7159.JPG','../Photos/ANIL7162.JPG','../Photos/ANIL7171.JPG','../Photos/ANIL7163.JPG','../Photos/ANIL7173.JPG'
+    ];
+    let ci = 0;
+    function initPrincess(){
+      const el = document.getElementById('princess-carousel');
+      if(!el) return;
+      carouselPics.forEach(p=>{
+        const img = document.createElement('img');
+        img.src = p;
+        img.className = 'carousel-img';
+        img.style.opacity = 0;
+        el.appendChild(img);
+      });
+      const imgs = () => el.querySelectorAll('.carousel-img');
+      setInterval(()=>{
+        const list = imgs();
+        if(!list.length) return;
+        list.forEach((im,i)=> im.style.opacity = i === ci ? 1 : 0);
+        ci = (ci + 1) % list.length;
+      },2000);
+    }
+    document.addEventListener('DOMContentLoaded',initPrincess);
+  </script>
+</body>
+</html>
