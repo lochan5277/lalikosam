@@ -63,9 +63,9 @@ function initSlideshow(){
     "Photos/IMG_20250130_200859.jpg",
     "Photos/IMG-20250609-WA0083.jpg",
     "Photos/IMG_20250809_184727.jpg",
-    "Photos/IMG_20250907-WA0089.jpg",
+    "Photos/IMG-20250907-WA0089.jpg",
     "Photos/IMG_20241109_082553.jpg",
-    "Photos/IMG_20250607-WA0034.jpg",
+    "Photos/IMG-20250607-WA0034.jpg",
     "Photos/IMG_20250809_191438.jpg"
   ];
   window._modalSlides = slides;
